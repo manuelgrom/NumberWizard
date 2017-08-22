@@ -18,6 +18,33 @@ public class NumberWizard : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        StartGame();
+    }
+        
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            //print("Down arrow was pressed");
+            _maxNumber = (int)_guess;
+            NextGuess();
+
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            //print("Up arrow was pressed");
+            _minNumber = (int)_guess;
+            NextGuess();
+        }
+        else if (Input.GetKeyDown(KeyCode.Return))
+        {
+            print("I won!");
+        }
+    }
+
+    private void StartGame()
+    {
         _maxNumber += 1; // if 1000 is guessed it can be displayed
         print("Think of a number");
         print("The maximum number can be " + _maxNumber);
@@ -26,27 +53,10 @@ public class NumberWizard : MonoBehaviour
         print("up key for higher, down key for lower");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void NextGuess()
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            //print("Down arrow was pressed");
-            _maxNumber = (int)_guess;
-            _guess = (_maxNumber + _minNumber) / 2;
-            print("Higher or Lower then " + _guess);
-
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            //print("Up arrow was pressed");
-            _minNumber = (int)_guess;
-            _guess = (_maxNumber + _minNumber) / 2;
-            print("Higher or Lower then " + _guess);
-        }
-        else if (Input.GetKeyDown(KeyCode.Return))
-        {
-            print("I won!");
-        }
+        _guess = (_maxNumber + _minNumber) / 2;
+        print("Higher or Lower then " + _guess + " ?");
+        print("UP key for higher, DOWN key for lower");
     }
 }
