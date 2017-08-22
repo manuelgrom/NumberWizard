@@ -29,9 +29,13 @@ public class NumberWizard : MonoBehaviour
         {
             print("Down arrow was pressed");
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             print("Up arrow was pressed");
+        }
+        else if (Input.GetKeyDown(KeyCode.Return))
+        {
+            print("I won!");
         }
     }
 }
