@@ -20,7 +20,7 @@ public class NumberWizard : MonoBehaviour
     {
         StartGame();
     }
-        
+
     // Update is called once per frame
     void Update()
     {
@@ -40,12 +40,17 @@ public class NumberWizard : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Return))
         {
             print("I won!");
+            StartGame(); // restarts the game 
         }
     }
 
     private void StartGame()
     {
+        _maxNumber = 1000;
+        _minNumber = 1;
+        //guess number needs to be reset
         _maxNumber += 1; // if 1000 is guessed it can be displayed
+        print("===================");
         print("Think of a number");
         print("The maximum number can be " + _maxNumber);
         print("The minimum number can be " + _minNumber);
