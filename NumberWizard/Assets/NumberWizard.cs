@@ -18,6 +18,7 @@ public class NumberWizard : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        _maxNumber += 1; // if 1000 is guessed it can be displayed
         print("Think of a number");
         print("The maximum number can be " + _maxNumber);
         print("The minimum number can be " + _minNumber);
