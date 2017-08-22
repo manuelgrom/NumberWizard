@@ -7,7 +7,7 @@ public class NumberWizard : MonoBehaviour
     private int _maxNumber = 1000;
     private int _minNumber = 1;
     private float _rndNumber = 1.0f;
-    
+
     // Use this for initialization
     void Start()
     {
@@ -25,6 +25,13 @@ public class NumberWizard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            print("Down arrow was pressed");
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            print("Up arrow was pressed");
+        }
     }
 }
